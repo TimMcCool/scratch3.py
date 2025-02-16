@@ -28,7 +28,42 @@
                 <i data-feather="download" class="icon"></i> Install
             </button>
         </div>
+
+        <button onclick="openorclose();" class=" filled-btn" id="menu-button" style="display: none">
+            <i data-feather="more-vertical" class="icon"></i>
+        </button>
+
+        <div class="menu" style="display: none" id="menu">
+            <button onclick="openwin('https://github.com/TimMcCool/scratchattach/wiki/Documentation', '_blank');" class="">
+            </i>Documentation
+        </button>
+        <button onclick="openwin('https://github.com/TimMcCool/scratchattach/', '_blank');" class="">
+            <i data-feather="github" class="icon"></i> Source
+        </button>
+        <button onclick="scrollToSection('installation');" class="filled-btn">
+            <i data-feather="download" class="icon"></i> Install
+        </button>
+        </div>
     </header>
+
+    <script>
+    let open = 0;
+    function openorclose() {
+        if (open === 0) {
+            document.getElementById('menu').style = "display: flex;";
+            open = 1;
+        } else { 
+            document.getElementById('menu').style = "display: none;";
+            open = 0;
+        }
+    }
+
+    function openwin(win, target) {
+        window.open(win, target);
+    }
+    </script>
+
+
     <div class="background-container">
         <div class="background-image"></div> <!-- New div for the background image -->
         <section class="section-1" id="intro">
@@ -242,6 +277,8 @@
             const section = document.getElementById(sectionId);
             const elementPosition = section.getBoundingClientRect().top + window.scrollY; // Add current scroll position
             window.scrollTo({ behavior: 'smooth', top: elementPosition-75});
+            document.getElementById('menu').style = "display: none;";
+            open = 0;
         }
 
     </script>

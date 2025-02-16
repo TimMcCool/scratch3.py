@@ -1,11 +1,23 @@
-@media (max-width: 768px) {
+
+
+@media only screen and (max-width: 800px) {
     .nav-buttons {
         display: none; /* Hides the navigation buttons */
+    }
+    #menu-button {
+        display: block!important;
+    }
+    .nav-buttons {
+        display: none!important; /* Hides the navigation buttons */
     }
 
     /* You can also hide the logo if needed */
     .logo {
-        display: none; /* Hides the logo */
+        display: block; /* Hides the logo */
+    }
+
+    .logo img {
+        width: 100px!important;
     }
 
     /* Stack columns in section 1 */
@@ -19,6 +31,10 @@
         width: 80%; /* Make image responsive */
         margin-bottom: 20px; /* Add some space below the image */
     }
+
+    .expand-box {
+        width: 90%!important;
+    }
 }
 
 /* General Reset */
@@ -26,12 +42,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+#menu-button {
+    background-color: rgba(107, 0, 0, 0);
+    color: white;
+    border: none;
 }
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
     background-color: #121212;
     color: #ffffff;
+    overflow-x: hidden;
 }
 
 /* Sticky Header */
@@ -44,8 +68,9 @@ header {
     border-bottom: 1px solid #333;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 10000000000000000000000000000000000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Added shadow for the header */
+    height: 65px;
 }
 
 .logo-section {
@@ -467,4 +492,20 @@ a {
     font-size: 14px; /* Font size for author */
     color: #aaa; /* Slightly lighter color for author */
     margin: 0;
+}
+
+.menu {
+    top: 65px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.767);
+    backdrop-filter: blur(10px);
+    margin: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
 }
