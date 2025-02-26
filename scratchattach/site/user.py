@@ -635,7 +635,7 @@ class User(BaseSiteComponent):
         Args:
             comment_id: The id of the comment that should be reported
         """
-        self._assert_permission()
+        self._assert_auth()
         return requests.post(
             f"https://scratch.mit.edu/site-api/comments/user/{self.username}/rep/",
             headers = headers,
